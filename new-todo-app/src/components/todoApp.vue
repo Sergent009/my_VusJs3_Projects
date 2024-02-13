@@ -5,9 +5,7 @@
     <button class="taskbuttons" v-show="isEditing" @click="taskEdited">Edit Task</button>
 
     <div class="semi-container">
-    <div v-show="!isEditing" class="alltasks" v-for="(allTasks, index) in tasks" :key="index">
-        <!-- <arrow /> -->
-        
+    <div v-show="!isEditing" class="alltasks" v-for="(allTasks, index) in tasks" :key="index">        
         {{allTasks}}
         <button @click="editTask(index)" class="editButton">Edit Task</button>
         <button @click="deleteTask(index)" class="deleteButton">Delete Task</button>
@@ -20,14 +18,9 @@
 
 
 <script>
-// import arrow from '../assets/arrow-right-long-solid.svg'
 
 export default {
 name: 'todoApp',
-
-// components: {
-//      arrow
-// },
 
 data(){
     return{
@@ -63,94 +56,93 @@ methods: {
 }
 </script>
 
-<style scoped>
-
-.container{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+<style>
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
 }
 
-.inputField{
-    width: 600px;
-    height: 35px;
-    position: absolute;
-    top: 40px;
-    left: 350px;
-    border-radius: 5px;
-    border: none;
-    background: #ebebeb;
-    border: 1px solid black;
-    border-radius: 6px;
-    font-size: 17px;
-    /* box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1)
-                0px 2px 4px -1px rgba(0, 0, 0, 0.06); */
+.container {
+  max-width: 600px;
+  margin: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.taskbuttons{
-    width: 90px;
-    height: 41px;
-    position: absolute;
-    top: 39px;
-    left: 867px;
-    border-radius: 5px;
-    background: white;
-   color: green;
-   font-weight: 600;
-   border: 1px solid black;
+.inputField {
+  width: calc(100% - 16px);
+  padding: 8px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
 }
 
-.semi-container{
-    position: relative;
-    top: 150px;
-    left: 350px;
-    width: 570px;
-    height: auto;
-    background: #ebebeb;
-    border: 1px solid rgb(63, 62, 62);
-    border-radius: 10px;
-    padding: 20px;
+.taskbuttons {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.alltasks{
-    padding: 10px 10px;
-    font-size: 17px;
+.taskbuttons:hover {
+  background-color: #007bff;
+  color: #fff;
 }
 
-.editButton{
-   position: absolute;
-   left: 405px;
-   background: white;
-   color: green;
-   font-weight: 600;
-   width: 90px;
-   height: 30px;
-   border: none;
-   border-radius: 5px;
-}
-.editButton:hover{
-    background: rgb(130, 150, 100);
-    color: black;
-}
-.deleteButton{
-    position: absolute;
-   left: 500px;
-   background: white;
-   color: green;
-   font-weight: 600;
-   width: 90px;
-   height: 30px;
-   border: none;
-   border-radius: 5px;
-}
-.deleteButton:hover{
-    background: rgb(130, 150, 100);
-    color: black;
+.add-btn {
+  background-color: #28a745;
 }
 
+.edit-btn {
+  background-color: #17a2b8;
+}
+
+.alltasks {
+  margin-bottom: 10px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s;
+}
+
+.alltasks:hover {
+  transform: scale(1.02);
+}
+
+.task-buttons button {
+  padding: 8px;
+  margin-left: 5px;
+  font-size: 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.task-buttons button:hover {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.editing-task {
+  margin-bottom: 10px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
 </style>
+
+
 
 
 
