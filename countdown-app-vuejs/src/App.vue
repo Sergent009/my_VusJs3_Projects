@@ -1,16 +1,16 @@
 <template>
-
-<Home />
+<!-- <h3>hello world</h3> -->
+<Counter />
 
 </template>
 
 <script>
-import Home from './views/Home.vue'
+import Counter from './assets/components/Counter.vue'
 
 export default {
   name: 'App',
   components: {
-    Home
+    Counter
   }
 }
 </script>
